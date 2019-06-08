@@ -17,6 +17,8 @@ public class PSO {
     private int maxIteration = 0;
     private double fitness = 0;
     static public Problem problem;
+    double result = 0;
+    
 
     public PSO(int Partical_size, Problem p, int iteration) {
         PARTICLE_SIZE = Partical_size;
@@ -34,7 +36,7 @@ public class PSO {
         int iteration = 0;
 
         while (iteration < maxIteration) {
-            //  System.out.println("for "+(iteration+1)+ ". iterasyon");
+
             Particle.particleCount = 1;
             for (int i = 0; i < swarm.particles.length; i++) {
 
@@ -54,10 +56,10 @@ public class PSO {
             swarm.updateGlobalBestParticle();
             iteration++;
             System.out.println(iteration + ". iteration     -     Globasl Best Value: " + swarm.gBestParticle.fitness);
-            //    System.out.println("");
 
         }
-
+        this.gBest = swarm.gBestParticle;
+        this.result = swarm.gBestParticle.fitness;
     }
 
 }

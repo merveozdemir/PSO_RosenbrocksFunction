@@ -30,18 +30,14 @@ public class Particle {
 
         position = new double[dimension];
         velocity = new double[dimension];
-      //  System.out.println(particleCount + ".particle ilk oluştuğunda");
+   
         pBestParticle = new Particle(fitness, dimension);
         for (int i = 0; i < dimension; i++) {
             Random rand = new Random();
             position[i] = minValue + rand.nextDouble() * (maxValue - minValue);
             velocity[i] = minV + Math.random() * (maxV - minV);
-     
-     
-         //   System.out.println(position[i] + " ");
-
         }
-     //   System.out.println("");
+
       System.arraycopy(this.position, 0, pBestParticle.position, 0, dimension);
       System.arraycopy(this.velocity, 0, pBestParticle.velocity, 0, dimension);
       
@@ -82,7 +78,7 @@ public class Particle {
 
         for (int i = 0; i < position.length; i++) {
             position[i] += velocity[i];
-         //   System.out.println(particleCount + ". particle positon aynalamadan önce position " + i + ": " + position[i]);
+       
 
             if (position[i] > maxValue || position[i] < minValue) {
                 while (position[i] > maxValue || position[i] < minValue) {
@@ -92,7 +88,7 @@ public class Particle {
                         position[i] = minValue + (minValue - this.position[i]);
                     }
                 }
-             //   System.out.println(particleCount + ". particle aynalamadan sonra position" + i + ": " + position[i]);
+           
             }
         }
 

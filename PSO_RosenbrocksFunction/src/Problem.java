@@ -28,10 +28,8 @@ public class Problem {
         double fitnessResult = 0;
         double x[] = particle.position;
         for (int i = 0; i < dimension - 1; i++) {
-            // System.out.println("--- "+ Math.pow((x[particleCount+1]- Math.pow(x[particleCount], 2)),2));
-            //   System.out.println("------"+ Math.pow(x[particleCount]-1, 2));
-            fitnessResult += 100 * Math.pow((x[i + 1] - Math.pow(x[i], 2)), 2) + Math.pow((x[i] - 1), 2);
-          //  fitnessResult +=  Math.pow(x[i], 2);
+           fitnessResult += 100 * Math.pow((x[i + 1] - Math.pow(x[i], 2)), 2) + Math.pow((x[i] - 1), 2);
+          
         }
 
         return fitnessResult;
